@@ -1,0 +1,20 @@
+{
+  "people" : [
+    {
+      "firstname" : "John",
+      "lastname" : "Doe",
+      "link" : {
+        "href" : "/people/john",
+        "rel" : "self"
+      }
+    },
+    {
+      "firstname" : "Peggy",
+      "lastname" : "Sue",
+      "link" : {
+        "href" : "/people/peggy",
+        "rel" : "self"
+      }
+    }
+  ]
+}
