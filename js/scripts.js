@@ -35,8 +35,9 @@
       $.ajax({
         type: method,
         url: url,
-        data: form.serialize(),
-        headers : headers
+        data: serialize(form),
+        headers : headers,
+        contentType: form.data('type') === 'json' ? 'application/json' : 'application/x-www-form-urlencoded'
       }).done(function(data, textStatus, jqXHR) {
         showResult(jqXHR.status, textStatus, data, form);
       }).fail(function(jqXHR, textStatus, errorThrown) {
@@ -86,6 +87,17 @@
          }
        }
        return links;
+    };
+
+    var serialize = function(form) {
+        if (form.data('type') !== 'json') {
+          return form.serialize();
+        }
+        var result = {};
+        $('input[name]', form).each(function() {
+          result[$(this).attr('name')] = $(this).val();
+        });
+        return JSON.stringify(result);
     };
 
     var showURLs = function(form) {

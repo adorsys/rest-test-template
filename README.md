@@ -27,6 +27,7 @@ Edit the index.html and add a form  for each Resource. Example:
 * You need a form with a action, method and one input type=submit.
 * Parenthesized parts of the action will be replaced by the values of input fields with a according id.
 * Named input fields will be serialized as form-data, others not.
+* Add data-type="json" if you want the form serialized as JSON.
 * If you want to pass HTTP-headers add a input-field with the according data-header attribute.
 
 Happy Testing!
